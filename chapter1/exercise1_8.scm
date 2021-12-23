@@ -1,6 +1,3 @@
-#!r6rs
-(import (rnrs base (6)))
-
 (define (square x) (* x x))
 
 (define (cbrt x)

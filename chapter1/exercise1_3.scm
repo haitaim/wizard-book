@@ -1,6 +1,3 @@
-#!r6rs
-(import (rnrs base (6)))
-
 (define (square x) (* x x))
 (define (sum-of-squares x y)
   (+ (square x) (square y)))

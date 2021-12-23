@@ -1,6 +1,3 @@
-#!r6rs
-(import (rnrs base (6)))
-
 (define (square x) (* x x))
 
 (define (average x y)
@@ -16,3 +13,4 @@
         guess
         (sqrt-iter (improve guess) guess)))
   (sqrt-iter 1 x))
+
