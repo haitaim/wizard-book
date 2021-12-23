@@ -74,8 +74,5 @@ The new version of good-enough? is in exercise1_7.rkt.
 The new method was more accurate for smaller numbers, but actually worse for
 large numbers.
 
-Exercise 1.8:
-My implementation is in exercise1_8.rkt. However, DrRacket pretty much blew up
-when I tried testing it. Sometime in the future, I should try to see if I can
-get it working.
+Exercise 1.8: In seperate file
 
