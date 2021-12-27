@@ -76,3 +76,77 @@ large numbers.
 
 Exercise 1.8: In seperate file
 
+Exercise 1.9:
+First procedure
+(+ 4 5)
+(inc (+ 3 5))
+(inc (inc (+ 2 5)))
+(inc (inc (inc (+ 1 5))))
+(inc (inc (inc (inc (+ 0 5)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+
+Second procedure
+(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+(+ 0 9)
+9
+
+The first is recursive. The second is iterative.
+
+Exercise 1.10:
+(A 1 10) -> 1024
+(A 2 4) -> 65536
+(A 3 3) -> 65536
+
+f(n) = 2n
+g(n) = 2^n
+Work:
+if n = 1
+(A 1 1)
+2
+
+if n = 2
+(A 1 2)
+(A 0 (A 1 1))
+(A 0 2)
+4
+
+if n = 3
+(A 1 3)
+(A 0 (A 1 2))
+(A 0 (A 0 (A 1 1)))
+(A 0 (A 0 2))
+(A 0 4)
+8
+
+h(n) = 2          if n = 1
+       2^h(n - 1) if n > 1
+Work:
+if n = 1
+(A 2 1)
+2
+
+if n = 2
+(A 2 2)
+(A 1 (A 2 1))
+(A 1 2)
+4
+
+if n = 3
+(A 2 3)
+(A 1 (A 2 2))
+(A 1 4)
+16
+
+if n = 4
+(A 2 4)
+(A 1 (A 2 3))
+(A 1 16)
+65536
+
