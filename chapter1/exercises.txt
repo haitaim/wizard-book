@@ -127,6 +127,20 @@ if n = 3
 
 h(n) = 2          if n = 1
        2^h(n - 1) if n > 1
+
+Some initial values of evaluation
+h(1) = 2
+h(2) = 2^2
+h(3) = 2^2^2
+etc...
+
+Based on the above, we can remove the recursive definition Knuth up-arrow
+notation.
+h(n) = 2^^n
+
+Wolfram refers to this as a power tower
+Wikipedia refers to this as tetration
+
 Work:
 if n = 1
 (A 2 1)
