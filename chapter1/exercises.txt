@@ -164,3 +164,7 @@ if n = 4
 (A 1 16)
 65536
 
+Exercise 11: On seperate file
+
+Exercise 12: On seperate file
+
