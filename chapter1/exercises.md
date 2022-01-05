@@ -106,7 +106,7 @@ Written in exercise1-8.scm
 
 ## Exercise 9
 
-First procedure
+First procedure:
 
 ```scheme
 (+ 4 5)
@@ -121,7 +121,7 @@ First procedure
 9
 ```
 
-Second procedure
+Second procedure:
 
 ```scheme
 (+ 4 5)
@@ -173,9 +173,11 @@ g(n) = 2^n
 8
 ```
 
-h(n) = 2 if n = 1
+h(n) =
 
-       2^h(n - 1) if n > 1
+{ 2 if n = 1
+
+{ 2^h(n - 1) if n > 1
 
 Some initial values of evaluation
 
@@ -187,7 +189,7 @@ h(3) = 2^2^2
 
 etc...
 
-Based on the above, we can remove the recursive definition Knuth up-arrow
+Based on the above, we can remove the recursive definition with Knuth up-arrow
 notation.
 
 h(n) = 2^^n
