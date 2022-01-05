@@ -1,4 +1,4 @@
-Exercise 1.1:
+Exercise 1:
 10 -> 10
 
 (+ 5 3 4) -> 12
@@ -35,19 +35,19 @@ Exercise 1.1:
    (+ a 1))
 -> 16
 
-Exercise 1.2:
+Exercise 2:
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 3)))))
    (* 3 (- 6 2) (-2 7)))
 
-Exercise 1.3: In seperate file
+Exercise 3: In seperate file
 
-Exercise 1.4:
+Exercise 4:
 The compound expression operator will return a primitive procedure depending on
 the result of the if expression. If b > 0, then the expression will evaluate to
 the addition procedure. Otherwise, the expression will evaluate to the
 subtraction procedure.
 
-Exercise 1.5:
+Exercise 5:
 In applicative-order evaluation, the interpreter will crash. The interpreter
 will first call p before expanding test. p is a procedure whose definition is to
 call itself. This leads to infinite recursion, which is the root of why the
@@ -57,12 +57,12 @@ In normal-order evaluation, the interpreter will return 0. The interpreter will
 expand test first, which avoids evaluating p. x is 0, so the if expression will
 return 0.
 
-Exercise 1.6:
+Exercise 6:
 If expressions will only evaluate the expression selected by the predicate,
 whereas new-if will evaluate both. Because the else clause uses recursion,
 the new-if version will preform infinite recursion and eventually crash.
 
-Exercise 1.7:
+Exercise 7:
 For smaller numbers, good-enough? does not have a provide a very high amount of
 precision to pass. For example, (sqrt 9) should result in 3, but will instead
 evaluate to 3.00009155413138. When dealing with large numbers, the lack of
@@ -74,9 +74,9 @@ The new version of good-enough? is in exercise1_7.rkt.
 The new method was more accurate for smaller numbers, but actually worse for
 large numbers.
 
-Exercise 1.8: In seperate file
+Exercise 8: In seperate file
 
-Exercise 1.9:
+Exercise 9:
 First procedure
 (+ 4 5)
 (inc (+ 3 5))
@@ -99,7 +99,7 @@ Second procedure
 
 The first is recursive. The second is iterative.
 
-Exercise 1.10:
+Exercise 10:
 (A 1 10) -> 1024
 (A 2 4) -> 65536
 (A 3 3) -> 65536
@@ -167,4 +167,8 @@ if n = 4
 Exercise 11: On seperate file
 
 Exercise 12: On seperate file
+
+Exercise 13: Skipped...
+
+Exercise 14:
 
