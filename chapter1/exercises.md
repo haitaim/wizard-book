@@ -1,43 +1,55 @@
 Exercise 1:
-10 -> 10
+`10` -> 10
 
-(+ 5 3 4) -> 12
+`(+ 5 3 4)` -> 12
 
-(- 9 1) -> 8
+`(- 9 1)` -> 8
 
-(/ 6 2) -> 3
+`(/ 6 2)` -> 3
 
-(+ (* 2 4) (- 4 6)) -> 6
+`(+ (* 2 4) (- 4 6))` -> 6
 
-(define a 3) ->
+`(define a 3)` ->
 
-(define b (+ a 1)) ->
+`(define b (+ a 1))` ->
 
-(+ a b (* a b)) -> 19
+`(+ a b (* a b))` -> 19
 
-(= a b) -> #f
+`(= a b)` -> #f
 
+```
 (if (and (> b a) (< b (* a b)))
     b
     a)
+```
+
 -> 4
 
+```
 (cond ((= a 4) 6)
       ((= b 4) (+ 6 7 a))
       (else 25))
+```
+
 -> 16
 
-(+ 2 (if (> b a) b a)) -> 6
+`(+ 2 (if (> b a) b a))` -> 6
 
+```
 (* (cond ((> a b) a)
          ((< a b) b)
          (else - 1))
    (+ a 1))
+```
+
 -> 16
 
 Exercise 2:
+
+```
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 3)))))
    (* 3 (- 6 2) (-2 7)))
+```
 
 Exercise 3: In seperate file
 
@@ -69,7 +81,7 @@ evaluate to 3.00009155413138. When dealing with large numbers, the lack of
 precision means that finding the difference of two numbers becomes unfeasible
 for small amounts.
 
-The new version of good-enough? is in exercise1_7.rkt.
+The new version of good-enough? is in exercise1-7.rkt.
 
 The new method was more accurate for smaller numbers, but actually worse for
 large numbers.
@@ -78,6 +90,8 @@ Exercise 8: In seperate file
 
 Exercise 9:
 First procedure
+
+```
 (+ 4 5)
 (inc (+ 3 5))
 (inc (inc (+ 2 5)))
@@ -88,42 +102,55 @@ First procedure
 (inc (inc 7))
 (inc 8)
 9
+```
 
 Second procedure
+
+```
 (+ 4 5)
 (+ 3 6)
 (+ 2 7)
 (+ 1 8)
 (+ 0 9)
 9
+```
 
 The first is recursive. The second is iterative.
 
 Exercise 10:
-(A 1 10) -> 1024
-(A 2 4) -> 65536
-(A 3 3) -> 65536
+`(A 1 10)` -> 1024
+`(A 2 4)` -> 65536
+`(A 3 3)` -> 65536
 
 f(n) = 2n
 g(n) = 2^n
 Work:
 if n = 1
+
+```
 (A 1 1)
 2
+```
 
 if n = 2
+
+```
 (A 1 2)
 (A 0 (A 1 1))
 (A 0 2)
 4
+```
 
 if n = 3
+
+```
 (A 1 3)
 (A 0 (A 1 2))
 (A 0 (A 0 (A 1 1)))
 (A 0 (A 0 2))
 (A 0 4)
 8
+```
 
 h(n) = 2          if n = 1
        2^h(n - 1) if n > 1
@@ -143,32 +170,42 @@ Wikipedia refers to this as tetration
 
 Work:
 if n = 1
+
+```
 (A 2 1)
 2
+```
 
 if n = 2
+
+```
 (A 2 2)
 (A 1 (A 2 1))
 (A 1 2)
 4
+```
 
 if n = 3
+
+```
 (A 2 3)
 (A 1 (A 2 2))
 (A 1 4)
 16
+```
 
 if n = 4
+
+```
 (A 2 4)
 (A 1 (A 2 3))
 (A 1 16)
 65536
+```
 
 Exercise 11: On seperate file
 
 Exercise 12: On seperate file
 
-Exercise 13: Skipped...
-
-Exercise 14:
+Exercise 13...: To be done at later time
 
