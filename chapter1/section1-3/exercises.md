@@ -28,14 +28,16 @@ To define `factorial` in terms of `product`:
 (define (factorial n) (product identity 1 inc n))
 ```
 
-The product in the textbook is the Wallis product if the index starts at 2
-rather than 1.
+The Wallis product defined in the textbook is correct, but not very convenient
+to convert into a function. Instead, the Wikipedia article provides the same
+thing in Pi notation with the only difference being that it returns pi/2
+instead.
 
 ```scheme
-(define (f x) (/ (* 4 x x) (- (* 4 x x) 1)))
-
-; We can start the index at 1 and multiply by 2 and still get pi
-(define (wallis n) (* 4 (product f 2 inc n)))
+(define (wallis n)
+  (define (f x) (/ (* 4 x x)
+                   (- (* 4 x x) 1)))
+  (* 2 (product f 1 inc n)))
 ```
 
 ## Exercise 32
