@@ -82,29 +82,32 @@ subtraction procedure.
 ## Exercise 5
 
 In applicative-order evaluation, the interpreter will crash. The interpreter
-will first call p before expanding test. p is a procedure whose definition is to
-call itself. This leads to infinite recursion, which is the root of why the
-program crashed.
+will first call `p` before expanding test. `p` is a procedure whose definition
+is to call itself. This leads to infinite recursion, which is the root of why
+the program crashed.
 
 In normal-order evaluation, the interpreter will return 0. The interpreter will
-expand test first, which avoids evaluating p. x is 0, so the if expression will
-return 0.
+expand test first, which avoids evaluating `p`. x is 0, so the if expression
+will return 0.
 
 ## Exercise 6
 
 If expressions will only evaluate the expression selected by the predicate,
-whereas new-if will evaluate both. Because the else clause uses recursion,
-the new-if version will preform infinite recursion and eventually crash.
+whereas `new-if` will evaluate both. Because the else clause uses recursion,
+the `new-if` version will preform infinite recursion and eventually crash.
 
 ## Exercise 7
 
-For smaller numbers, good-enough? does not have a provide a very high amount of
-precision to pass. For example, (sqrt 9) should result in 3, but will instead
-evaluate to 3.00009155413138. When dealing with large numbers, the lack of
-precision means that finding the difference of two numbers becomes unfeasible
+For smaller numbers, `good-enough?` does not have a provide a very high amount
+of precision to pass. For example, `(sqrt 9)` should result in 3, but will
+instead evaluate to 3.00009155413138. When dealing with large numbers, the lack
+of precision means that finding the difference of two numbers becomes unfeasible
 for small amounts.
 
-The new version of good-enough? is in exercise1-7.scm.
+```scheme
+(define (good-enough? guess old-guess)
+  (> 0.001 (abs (/ (- old-guess guess) guess))))
+```
 
 The new method was more accurate for smaller numbers, but actually worse for
 large numbers.
