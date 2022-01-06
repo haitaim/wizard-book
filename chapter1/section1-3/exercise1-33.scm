@@ -13,8 +13,8 @@
 ; Product of positive integers less than n relatively prime to n
 ; gcd is already defined by Scheme
 ; Otherwise, we can use the definition from the previous section
-(define (relatively-prime? i n) (= (gcd i n) 1))
 (define (g i n)
+  (define (relatively-prime? i n) (= (gcd i n) 1))
   (define (filter i) (relatively-prime? i n))
   (filtered-accumulate * 1 gcd i inc (- n 1) filter))
 
