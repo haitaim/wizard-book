@@ -69,11 +69,7 @@ g(n) = 2^n
 8
 ```
 
-h(n) =
-
-{ 2 if n = 1
-
-{ 2^h(n - 1) if n > 1
+h(n) = 2 if n = 1, 2^h(n - 1) if n > 1
 
 Some initial values of evaluation
 
