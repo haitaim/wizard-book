@@ -61,7 +61,18 @@ Exercises from chapter one, Building Abstractions with Procedures.
 
 ## Exercise 3
 
-Written in exercise1-3.scm
+```scheme
+(define (square x) (* x x))
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+
+; f will be the name of the required function
+(define (f x y z)
+  (cond ((and (<= x y) (<= x z)) (sum-of-squares y z))
+        ((and (<= y x) (<= y z)) (sum-of-squares x z))
+        (else (sum-of-squares x y))))
+
+```
 
 ## Exercise 4
 
@@ -102,7 +113,20 @@ large numbers.
 
 ## Exercise 8
 
-Written in exercise1-8.scm
+```scheme
+(define (square x) (* x x))
+
+(define (cbrt x)
+  (define (good-enough? guess old-guess)
+    (> 0.001 (abs (/ (- old-guess guess) guess))))
+  (define (improve guess)
+    (/ (+ (/ x (square guess)) (* 2 guess)) 3))
+  (define (cbrt-iter guess old-guess)
+    (if (good-enough? guess old-guess)
+        guess
+        (cbrt-iter (improve guess) guess)))
+  (cbrt-iter 1 x))
+```
 
 ## Exercise 9
 
@@ -225,15 +249,57 @@ Wikipedia refers to this as tetration.
 
 ## Exercise 11
 
-Written in exercise1-11.scm
+```scheme
+; Recursive definition
+(define (f n)
+  (if (< n 3)
+      n
+      (+ (f (- n 1)) (* 2 (f (- n 2))) (* 3 (f (- n 3))))))
+
+; To differentiate from the previous definition, the iterative version will be
+; named g.
+; a = n - 1
+; b = n - 2
+; c = n - 3
+(define (g n)
+  (define (g-iter a b c count)
+    (if (= count n)
+        a
+        (g-iter (+ a (* 2 b) (* 3 c))
+                a
+                b
+                (+ count 1))))
+  (if (< n 3)
+      n
+      (g-iter 2 1 0 2)))
+
+```
 
 ## Exercise 12
 
-Written in exercise1-12.scm
+```scheme
+; The mathematical definition is from the Wikipedia article
+(define (pascal n k)
+  (cond ((= n k) 1)
+        ((= k 0) 1)
+        (else (+ (pascal (- n 1) (- k 1)) (pascal (- n 1) k)))))
+
+```
 
 ## Exercise 13...
 
 To be done at later time
+
+## Exercise 30
+
+```scheme
+(define (sum term a next b)
+  (define (iter a result)
+    (if (> a b)
+        result
+        (iter (+ a 1) (+ result (term a)))))
+  (iter a 0))
+```
 
 ## Exercise 31
 
@@ -264,5 +330,20 @@ rather than 1.
 
 ## Exercise 32
 
-Written in exercise1-32.scm
+```scheme
+; Recursive process
+(define (accumulate combiner null-value term a next b)
+  (if (> a b)
+    null-value
+    (combiner (term a) (accumulate (next a) next b))))
+
+; Iterative process
+(define (accumulate combiner null-value term a next b)
+  (define (iter a result)
+    (if (> a b)
+      result
+      (iter (next a) (combiner (term a) result))))
+  (iter a null-value))
+
+```
 
