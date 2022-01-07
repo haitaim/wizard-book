@@ -49,7 +49,7 @@ To define `factorial` in terms of `product`:
 
 The Wallis product defined in the textbook is correct, but not very convenient
 to convert into a function. Instead, the Wikipedia article provides the same
-thing in Pi notation with the only difference being that it returns pi/2
+thing in pi notation with the only difference being that it returns pi/2
 instead.
 
 ```scheme
@@ -101,5 +101,37 @@ The procedures for parts a and b are called f and g, respectively.
   (define (relatively-prime? i n) (= (gcd i n) 1))
   (define (filter i) (relatively-prime? i n))
   (filtered-accumulate * 1 gcd i inc (- n 1) filter))
+```
+## Exercise 34
+
+It will throw an error because `g` is meant to be a procedure; following the
+expansion will lead to `(2 2)`, and `2` is not a procedure.
+
+```scheme
+(f f)
+(f 2)
+(2 2)
+; Error: 2 is not a procedure
+```
+
+## Exercise 35...
+
+To be done later
+
+## Exercise 41
+
+```scheme
+(define (double f)
+  (lambda (x) (f (f x))))
+
+(((double (double double)) inc) 5)
+; -> 21
+```
+
+## Exercise 42
+
+```scheme
+(define (compose f g)
+  (lambda (x) (f (g x))))
 ```
 
